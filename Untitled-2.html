@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ceylon Vidu Tours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        :root {
+            --gradient-1: linear-gradient(45deg, #00ff9d, #00ffff);
+            --gradient-2: linear-gradient(45deg, #4158D0, #C850C0);
+            --accent-color: #00ff9d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            height: 50vh;
+            background: var(--gradient-2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Ceylon Vidu Tours</div>
+
+    </nav>
+
+    <section class="hero">
+        <h1>About Us</h1>
+    </section>
+
+    <section class="section">
+        <div class="about-content">
+            <p>
+                Welcome to Ceylon Vidu Tours! We are dedicated to creating unforgettable travel experiences 
+                that showcase the natural beauty, rich culture, and fascinating history of Sri Lanka. 
+                With years of expertise in the travel industry, our mission is to ensure that every traveler 
+                leaves with memories to cherish forever.
+            </p>
+            <p>
+                At Ceylon Vidu Tours, we believe in sustainable tourism and supporting local communities. 
+                Our carefully curated itineraries cater to a variety of interests, from adventure and wildlife 
+                to history and relaxation. Let us take you on a journey of discovery!
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ceylon Vidu Tours. All rights reserved.</p>
+    </footer>
+</body>
+</html>
