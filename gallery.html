@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Ceylon Vidu Tours</title>
+    <style>
+                :root {
+            --gradient-1: linear-gradient(45deg, #00ff9d, #00ffff);
+            --gradient-2: linear-gradient(45deg, #4158D0, #C850C0);
+            --accent-color: #00ff9d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+
+        nav {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00ff9d;
+        }
+
+        .gallery-section {
+            margin-top: 100px;
+            padding: 2rem;
+        }
+
+        .gallery-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-left: -10px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        .fb{
+                color:white;
+                text-decoration:none ;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+         <div class="logo" >Ceylon Vidu Tours</div>
+    <div class="nav-links">
+        <a href="index.html?id=#home">Home</a>
+        <a href="index.html?id=#destinations">Destinations</a>
+        <a href="index.html?id=#packages">Tour Packages</a>
+        <a href="index.html?id=Untitled-2.html">About</a>
+        <a href="index.html?id=#reviews">Review</a>
+        <a href="index.html?id=gallery.html">Gallery</a>
+
+    </div>
+</nav>
+    
+
+    <section class="gallery-section">
+        <h1 class="gallery-title">Photo Gallery</h1>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="my/1.jpg" alt="Owner 1">
+            </div>
+            <div class="gallery-item">
+                <img src="my/2.jpg" alt="Owner 2">
+            </div>
+            <div class="gallery-item">
+                <img src="my/3.jpg" alt="Owner 3">
+            </div>
+            <div class="gallery-item">
+                <img src="my/4.jpg" alt="Owner 5">
+                <div class="gallery-item">
+                    <img src="my/5.jpg" alt="Owner 4">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="my/6.jpg" alt="Owner 3">
+            </div>
+            <div class="gallery-item">
+                <img src="my/7.jpg" alt="Owner 3">
+                <div class="gallery-item">
+                    <img src="my/8.jpg" alt="Owner 3">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="my/9.jpg" alt="Owner 3">
+            </div>
+            <div class="gallery-item">
+                <img src="my/10.jpg" alt="Owner 3">
+            </div>
+            <div class="gallery-item">
+                <img src="my/11.jpg" alt="Owner 3">
+            </div>
+            <div class="gallery-item">
+                <img src="my/12.jpg" alt="Owner 3">
+            </div>
+            <div class="gallery-item">
+                <img src="my/13.jpg" alt="Owner 3">
+            </div>
+            <div class="gallery-item">
+                <img src="my/14.jpg" alt="Owner 3">
+            </div>
+            <!-- Add more images here -->
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Ceylon Vidu Tours. All Rights Reserved.
+    </footer>
+</body>
+</html>
