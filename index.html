@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ceylon Vidu Tours - Experience Sri Lanka</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta property="og:title" content="Your Website Title">
     <meta property="og:image" content="/images/logo.png">
@@ -29,16 +29,6 @@
         }
         
 
-        nav {
-            position: fixed;
-            width: 100%;
-            padding: 1rem 2rem;
-            background: rgba(0,0,0,0.9);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
         #review-list {
     margin-bottom: 2rem;
     padding: 1rem;
@@ -48,7 +38,7 @@
     margin: 0 auto;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
+        
     .review-item {
     border-bottom: 1px solid #ddd;
     padding: 1rem 0;
@@ -79,37 +69,11 @@
             justify-content: flex-end;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            padding: 0;
-        }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
         .fb{
                 color:white;
                 text-decoration:none ;
         }
-        @media (max-width: 768px) {
-    #nav-links {
-        flex-direction: column;  /* Stack links vertically on smaller screens */
-        align-items: flex-end;   /* Align them to the right */
-    }
-
-    #nav-links {
-        margin-left: 0;  /* Remove left margin when stacked vertically */
-        margin-top: 10px;  /* Add space between links */
-    }
-}
-
 
         .hero {
             height: 100vh;
@@ -336,52 +300,41 @@
     border: 2px solid #ccc; /* Optional: Adds a border */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
 }
-#nav-bar {
-    padding: 10px 20px;
+:root {
+    --gradient-1: linear-gradient(45deg, #00ff9d, #00ffff);
+    --gradient-2: linear-gradient(45deg, #4158D0, #C850C0);
+    --accent-color: #00ff9d;
 }
 
-#nav-links {
-    list-style: none;
-    display: flex;  /* Use flexbox to display links in a row */
-    justify-content: flex-end;  /* Align links to the right */
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-@media (max-width: 768px) {
-    #nav-links {
-        display: flex;
-        flex-direction: column;  /* Stack links vertically */
-        align-items: flex-end;   /* Align links to the right */
-        margin-top: 20px;
-    }
 
-    #nav-links li {
-        margin-left: 0;  /* Remove left margin when links are stacked */
-        margin-top: 10px;  /* Add spacing between links */
-    }
-
-    #nav-links a {
-        font-size: 14px;  /* Reduce font size for mobile view */
-    }
+body{
+    min-height: 100vh;
 }
 
 
     </style>
 </head>
 <body>
-    
-    <nav id="nav-bar">
-             <div class="logo" >Ceylon Vidu Tours</div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#destinations">Destinations</a>
-            <a href="#packages">Tour Packages</a>
-            <a href="Untitled-2.html">About</a>
-            <a href="#reviews">Review</a>
-            <a href="gallery.html">Gallery</a>
 
-        </div>
+    <nav>
+
+        <ul>
+          <li class="logo"><a href="#">Ceylon Vidu Tours</a></li>
+          <li class="hideOnMobile"><a href="index.html?id=#home">Home</a></li>
+          <li class="hideOnMobile"><a href="index.html?id=#destinations">Destinations</a></li>
+          <li  class="hideOnMobile"><a href="index.html?id=#packages">Tour Packages</a></li>
+          <li  class="hideOnMobile"><a href="Untitled-2.html">About</a></li>
+          <li  class="hideOnMobile"><a href="gallery.html">Gallery</a></li>
+          <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+      </nav>
     </nav>
-
     <section class="hero" id="home">
         <div class="hero-slideshow">
             <div class="slide" style="background-image: url('image_processing20220429-447-17zywg4.jpg');"></div>
@@ -395,6 +348,17 @@
             <a href="#packages" class="cta-button">View Tour Packages</a>
         </div>
     </section>
+    <nav>
+    <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        <li><a href="index.html?id=#home">Home</a></li>
+        <li><a href="index.html?id=#destinations">Destinations</a></li>
+        <li><a href="index.html?id=#packages">Tour Packages</a></li>
+        <li><a href="Untitled-2.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        
+      </ul>
+      </nav>
 
     <section class="section" id="destinations">
         <h2 class="section-title">Popular Destinations</h2>
@@ -533,6 +497,15 @@
     </footer>
 
     <script>
+        function showSidebar(){
+            const sidebar =document.querySelector('.sidebar')
+            sidebar.style.display = 'flex' 
+        }
+        function hideSidebar(){
+            const sidebar =document.querySelector('.sidebar')
+            sidebar.style.display = 'none' 
+        }
+        
         AOS.init({
             duration: 1000,
             once: true
