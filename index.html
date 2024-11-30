@@ -336,13 +336,40 @@
     border: 2px solid #ccc; /* Optional: Adds a border */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
 }
+#nav-bar {
+    padding: 10px 20px;
+}
+
+#nav-links {
+    list-style: none;
+    display: flex;  /* Use flexbox to display links in a row */
+    justify-content: flex-end;  /* Align links to the right */
+    padding: 0;
+}
+@media (max-width: 768px) {
+    #nav-links {
+        display: flex;
+        flex-direction: column;  /* Stack links vertically */
+        align-items: flex-end;   /* Align links to the right */
+        margin-top: 20px;
+    }
+
+    #nav-links li {
+        margin-left: 0;  /* Remove left margin when links are stacked */
+        margin-top: 10px;  /* Add spacing between links */
+    }
+
+    #nav-links a {
+        font-size: 14px;  /* Reduce font size for mobile view */
+    }
+}
 
 
     </style>
 </head>
 <body>
     
-    <nav>
+    <nav id="nav-bar">
              <div class="logo" >Ceylon Vidu Tours</div>
         <div class="nav-links">
             <a href="#home">Home</a>
@@ -494,7 +521,7 @@
             </div>
             <div>
                 <h3>Contact Info</h3>
-                <p>Email: ceylonvidutours@gmail.com</p>
+                <p>Email:</p>
                 <p>Phone: +94 77 239 1260</p>
             </div>
             <div>
