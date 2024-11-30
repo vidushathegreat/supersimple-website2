@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Ceylon Vidu Tours</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         :root {
             --gradient-1: linear-gradient(45deg, #00ff9d, #00ffff);
@@ -19,16 +19,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        nav {
-            position: fixed;
-            width: 100%;
-            padding: 1rem 2rem;
-            background: rgba(0,0,0,0.9);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
         .logo {
             font-size: 1.8rem;
@@ -38,20 +28,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
 
         .hero {
             height: 50vh;
@@ -89,16 +66,28 @@
 </head>
 <body>
     <nav>
-        <div class="logo" >Ceylon Vidu Tours</div>
-   <div class="nav-links">
-       <a href="index.html?id=#home">Home</a>
-       <a href="index.html?id=#destinations">Destinations</a>
-       <a href="index.html?id=#packages">Tour Packages</a>
-       <a href="index.html?id=Untitled-2.html">About</a>
-       <a href="index.html?id=gallery.html">Gallery</a>
 
-   </div>
-</nav>
+        <ul>
+          <li class="logo"><a ref="#">Ceylon Vidu Tours</a></li>
+          <li class="hideOnMobile"><a href="index.html?id=#home">Home</a></li>
+          <li class="hideOnMobile"><a href="index.html?id=#destinations">Destinations</a></li>
+          <li  class="hideOnMobile"><a href="index.html?id=#packages">Tour Packages</a></li>
+          <li  class="hideOnMobile"><a href="Untitled-2.html">About</a></li>
+          <li  class="hideOnMobile"><a href="gallery.html">Gallery</a></li>
+          <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            <li><a href="index.html?id=#home">Home</a></li>
+            <li><a href="index.html?id=#destinations">Destinations</a></li>
+            <li><a href="index.html?id=#packages">Tour Packages</a></li>
+            <li><a href="Untitled-2.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            
+          </ul>
+          </nav>
     <section class="hero">
         <h1>About Us</h1>
     </section>
@@ -122,5 +111,15 @@
     <footer>
         <p>&copy; 2024 Ceylon Vidu Tours. All rights reserved.</p>
     </footer>
+    <script>
+        function showSidebar(){
+    const sidebar =document.querySelector('.sidebar')
+    sidebar.style.display = 'flex' 
+}
+function hideSidebar(){
+    const sidebar =document.querySelector('.sidebar')
+    sidebar.style.display = 'none' 
+}
+</script>
 </body>
 </html>
