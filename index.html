@@ -6,6 +6,13 @@
     <title>Ceylon Vidu Tours - Experience Sri Lanka</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Your Website Title">
+    <meta property="og:image" content="/images/logo.png">
+    <meta property="og:image:alt" content="Your Site Logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/images/logo.png">
+    
     
     <style>
         :root {
@@ -32,6 +39,35 @@
             justify-content: space-between;
             align-items: center;
         }
+        #review-list {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+    .review-item {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+    }
+
+    .review-item:last-child {
+    border-bottom: none;
+    }
+
+    .review-item h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    }
+
+    .review-item p {
+    font-size: 1rem;
+    color: #555;
+    }
+
 
         .logo {
             font-size: 1.8rem;
@@ -39,6 +75,7 @@
             background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            padding-left: 70px;
         }
 
         .nav-links {
@@ -54,6 +91,10 @@
 
         .nav-links a:hover {
             color: var(--accent-color);
+        }
+        .fb{
+                color:white;
+                text-decoration:none ;
         }
 
         .hero {
@@ -273,18 +314,31 @@
         opacity: 0;
     }
 }
+.logo-image {
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Ensures the image is a square */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image doesn't distort */
+    border: 2px solid #ccc; /* Optional: Adds a border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
+}
+
 
     </style>
 </head>
 <body>
+    
     <nav>
-        <div class="logo">Ceylon Vidu Tours</div>
+            <img src="favicon.ico" class="logo-image" style="position:absolute;top:5px;width: 60px;height: 60px">
+             <div class="logo" >Ceylon Vidu Tours</div>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#destinations">Destinations</a>
             <a href="#packages">Tour Packages</a>
             <a href="Untitled-2.html">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#reviews">Review</a>
+            <a href="gallery.html">Gallery</a>
+
         </div>
     </nav>
 
@@ -294,6 +348,7 @@
             <div class="slide" style="background-image: url('03.jpg');"></div>
             <div class="slide" style="background-image: url('Leopard-Spotting-at-Yala-National-Park-Hambantota-Sri-Lanka-1-1400x550-c-default.jpg');"></div>
         </div>
+    
         <div class="hero-content">
             <h1>Discover the Pearl of Indian Ocean</h1>
             <p>Experience the magic of Sri Lanka with our carefully curated tours</p>
@@ -349,8 +404,8 @@
                 <li>Day 4: Kandy Temple & Cultural Show</li>
                 <li>Day 5: Departure</li>
             </ul>
-            <span class="price-tag">From $250 per person</span>
-            <a href="#contact" class="cta-button">Book Now</a>
+            <span class="price-tag">From $250</span>
+            <a href="https://wa.link/7gqzpj" class="cta-button">Book Now</a>
         </div>
 
         <div class="package-card" data-aos="fade-up">
@@ -362,8 +417,8 @@
                 <li>Day 5-6: Bentota Beach Relaxation</li>
                 <li>Day 7: Departure</li>
             </ul>
-            <span class="price-tag">From $320 per person</span>
-            <a href="#contact" class="cta-button">Book Now</a>
+            <span class="price-tag">From $320</span>
+            <a href="https://wa.link/7gqzpj" class="cta-button">Book Now</a>
         </div>
 
         <div class="package-card" data-aos="fade-up">
@@ -375,12 +430,34 @@
                 <li>Day 5: Scenic Train Journey</li>
                 <li>Day 6: Departure</li>
             </ul>
-            <span class="price-tag">From $270 per person</span>
-            <a href="#contact" class="cta-button">Book Now</a>
+            <span class="price-tag">From $270</span>
+            <a href="https://wa.link/7gqzpj" class="cta-button">Book Now</a>
+        </div>
+    </section>
+    <section class="section" id="reviews">
+        <h2 class="section-title">Customer Reviews</h2>
+        <div id="review-list">
+            <!-- Reviews will appear here -->
+        </div>
+        <div class="contact-form">
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="review">Your Review</label>
+                    <textarea id="review" name="review" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Submit Review</button>
+            </form>
         </div>
     </section>
 
-    <section class="section" id="contact">
+    
+    
+
+   <!-- <section class="section" id="contact">
         <h2 class="section-title">Contact Us</h2>
         <div class="contact-form">
             <form id="bookingForm" action="process-form.php" method="POST">
@@ -413,7 +490,7 @@
             </form>
             
         </div>
-    </section>
+    </section> -->
 
     <footer>
         <div class="footer-content">
@@ -428,7 +505,8 @@
             </div>
             <div>
                 <h3>Follow Us</h3>
-                <p>Facebook | Instagram | Twitter</p>
+                <p><a class="fb" href="https://www.facebook.com/mssksilvaseeduwa?mibextid=ZbWKwL">facebook</a> | <a class="fb" href="https://www.instagram.com/ceylonvidutour?igsh=YzljYTk1ODg3Zg==">Instagram</a> | <a class="fb" href="https://wa.link/7gqzpj">Whatsapp |</a><br>
+                 <a class="fb" href="https://www.tripadvisor.co.uk/Attraction_Review-g3736162-d24998664-Reviews-Ceylon_Vidu_Tours-Seeduwa_Western_Province.html">Tripadvisor</a></p>
             </div>
         </div>
     </footer>
@@ -471,6 +549,27 @@
     } else {
         alert(result.message);
     }
+});
+document.getElementById('reviewForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const review = document.getElementById('review').value;
+
+    // Create a new review element
+    const reviewList = document.getElementById('review-list');
+    const newReview = document.createElement('div');
+    newReview.classList.add('review-item');
+    newReview.innerHTML = `
+        <h4>${name}</h4>
+        <p>${review}</p>
+    `;
+
+    // Append the new review
+    reviewList.appendChild(newReview);
+
+    // Reset the form
+    this.reset();
 });
 
     </script>
