@@ -75,12 +75,14 @@
             background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            padding-left: 70px;
+            padding-right: 50px;
+            justify-content: flex-end;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
+            padding: 0;
         }
 
         .nav-links a {
@@ -96,6 +98,18 @@
                 color:white;
                 text-decoration:none ;
         }
+        @media (max-width: 768px) {
+    #nav-links {
+        flex-direction: column;  /* Stack links vertically on smaller screens */
+        align-items: flex-end;   /* Align them to the right */
+    }
+
+    #nav-links {
+        margin-left: 0;  /* Remove left margin when stacked vertically */
+        margin-top: 10px;  /* Add space between links */
+    }
+}
+
 
         .hero {
             height: 100vh;
@@ -329,13 +343,13 @@
 <body>
     
     <nav>
-
              <div class="logo" >Ceylon Vidu Tours</div>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#destinations">Destinations</a>
             <a href="#packages">Tour Packages</a>
             <a href="Untitled-2.html">About</a>
+            <a href="#reviews">Review</a>
             <a href="gallery.html">Gallery</a>
 
         </div>
