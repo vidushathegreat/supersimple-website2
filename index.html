@@ -198,5 +198,93 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <div id="welcome-screen" class="welcome-screen">
+    <div class="welcome-content">
+        <img src="logo.png" alt="Ceylon Vidu Tours Logo" class="welcome-logo">
+        <h1>Welcome to Ceylon Vidu Tours</h1>
+        <p>Discover the Magic of Sri Lanka</p>
+    </div>
+</div>
+
+<style>
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #4158D0, #C850C0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.welcome-content {
+    text-align: center;
+    color: white;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.welcome-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: scaleLogo 1s ease-out;
+}
+
+.welcome-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    animation: slideUp 0.8s ease-out;
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    animation: slideUp 0.8s ease-out 0.2s;
+}
+
+.welcome-screen.hide {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes scaleLogo {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const welcomeScreen = document.getElementById('welcome-screen');
+    // Prevent scrolling
+    document.body.style.overflow = 'hidden';
+    
+    // Hide welcome screen after 3 seconds
+    setTimeout(function() {
+        welcomeScreen.classList.add('hide');
+        // Re-enable scrolling
+        document.body.style.overflow = '';
+        // Remove from DOM after animation
+        setTimeout(function() {
+            welcomeScreen.remove();
+        }, 500);
+    }, 3000);
+});
+</script>
 </body>
 </html>
