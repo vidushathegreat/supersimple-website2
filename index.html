@@ -321,6 +321,21 @@
 body{
     min-height: 100vh;
 }
+        .logo-image {
+    position: fixed;
+    top: 70px;
+    left: 10px; /* Adjust to align properly */
+    width: 80px; /* Adjust size as needed */
+    height: auto;
+    z-index: 1000; /* Keeps it above other elements */
+    border-radius: 50%; /* Optional: makes it round */
+}
+
+@media (max-width: 600px) {
+    .logo-image {
+        width: 40px; /* Adjust size for smaller screens */
+    }
+}
 
 
     </style>
@@ -330,7 +345,11 @@ body{
     <nav>
 
         <ul>
-          <li class="logo"><a href="#">Ceylon Vidu Tours</a></li>
+            
+        <li class="logo">
+                <img src="tchotel_2024_L.png" alt="Ceylon Vidu Tours Logo" class="logo-image">
+                <a href="#">Ceylon Vidu Tours</a>
+        </li>
           <li class="hideOnMobile"><a href="index.html?id=#home">Home</a></li>
           <li class="hideOnMobile"><a href="index.html?id=#destinations">Destinations</a></li>
           <li  class="hideOnMobile"><a href="index.html?id=#packages">Tour Packages</a></li>
