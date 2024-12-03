@@ -5,351 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ceylon Vidu Tours - Experience Sri Lanka</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta property="og:title" content="Your Website Title">
-    <meta property="og:image" content="/images/logo.png">
-    <meta property="og:image:alt" content="Your Site Logo">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="/images/logo.png">
-    
-    
-    <style>
-        :root {
-            --gradient-1: linear-gradient(45deg, #00ff9d, #00ffff);
-            --gradient-2: linear-gradient(45deg, #4158D0, #C850C0);
-            --accent-color: #00ff9d;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-
-        #review-list {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: #f9f9f9;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-        
-    .review-item {
-    border-bottom: 1px solid #ddd;
-    padding: 1rem 0;
-    }
-
-    .review-item:last-child {
-    border-bottom: none;
-    }
-
-    .review-item h4 {
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-    }
-
-    .review-item p {
-    font-size: 1rem;
-    color: #555;
-    }
-
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            padding-right: 50px;
-            justify-content: flex-end;
-        }
-         @media (max-width: 445px) {
-            .logo {
-            font-size: 1rem; /* Decrease font size */
-            }
-        }
-
-
-        .fb{
-                color:white;
-                text-decoration:none ;
-        }
-
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('/api/placeholder/1920/1080');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .section {
-            padding: 5rem 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .destinations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .destination-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .destination-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .destination-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .destination-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .destination-content {
-            padding: 1.5rem;
-        }
-
-        .packages {
-            background: #f5f5f5;
-        }
-
-        .package-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .itinerary {
-            margin: 1rem 0;
-            padding-left: 20px;
-        }
-
-        .itinerary li {
-            margin: 0.5rem 0;
-        }
-
-        .price-tag {
-            background: var(--gradient-1);
-            color: black;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            display: inline-block;
-            font-weight: bold;
-        }
-
-        .cta-button {
-            background: var(--gradient-1);
-            color: black;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 1rem;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .hero-slideshow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out; /* Smooth transition */
-}
-
-.slide:nth-child(1) {
-    animation: slideShow 18s infinite 0s;
-}
-.slide:nth-child(2) {
-    animation: slideShow 18s infinite 6s;
-}
-.slide:nth-child(3) {
-    animation: slideShow 18s infinite 12s;
-}
-
-@keyframes slideShow {
-    0% {
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    55% {
-        opacity: 1; /* Visible for 5 seconds (50% of 6s cycle) */
-    }
-    60% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-.logo-image {
-    width: 100px; /* Adjust the size as needed */
-    height: 100px; /* Ensures the image is a square */
-    border-radius: 50%; /* Makes the image round */
-    object-fit: cover; /* Ensures the image doesn't distort */
-    border: 2px solid #ccc; /* Optional: Adds a border */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
-}
-:root {
-    --gradient-1: linear-gradient(45deg, #00ff9d, #00ffff);
-    --gradient-2: linear-gradient(45deg, #4158D0, #C850C0);
-    --accent-color: #00ff9d;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body{
-    min-height: 100vh;
-}
-        .logo-image {
-    position: fixed;
-    top: 70px;
-    left: 10px; /* Adjust to align properly */
-    width: 80px; /* Adjust size as needed */
-    height: auto;
-    z-index: 1000; /* Keeps it above other elements */
-    border-radius: 50%; /* Optional: makes it round */
-}
-
-@media (max-width: 600px) {
-    .logo-image {
-        width: 60px; /* Adjust size for smaller screens */
-    }
-}
-
-
-    </style>
+    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="icon" href="logo.png" type="image/x-icon">
 </head>
 <body>
-
     <nav>
-
         <ul>
-            
-        <li class="logo">
+            <li class="logo">
                 <img src="tchotel_2024_L.png" alt="Ceylon Vidu Tours Logo" class="logo-image">
+               
                 <a href="#">Ceylon Vidu Tours</a>
-        </li>
+            </li>
+
+       
           <li class="hideOnMobile"><a href="index.html?id=#home">Home</a></li>
           <li class="hideOnMobile"><a href="index.html?id=#destinations">Destinations</a></li>
           <li  class="hideOnMobile"><a href="index.html?id=#packages">Tour Packages</a></li>
@@ -363,9 +31,9 @@ body{
         <div class="hero-slideshow">
             <div class="slide" style="background-image: url('image_processing20220429-447-17zywg4.jpg');"></div>
             <div class="slide" style="background-image: url('03.jpg');"></div>
+            <div class="slide" style="background-image: url('360_F_125822817_Q3Zs7KKkJC68Hnh25DmIHmOo7n7PziHF.jpg');"></div>
             <div class="slide" style="background-image: url('Leopard-Spotting-at-Yala-National-Park-Hambantota-Sri-Lanka-1-1400x550-c-default.jpg');"></div>
         </div>
-    
         <div class="hero-content">
             <h1>Discover the Pearl of Indian Ocean</h1>
             <p>Experience the magic of Sri Lanka with our carefully curated tours</p>
@@ -432,7 +100,7 @@ body{
                 <li>Day 4: Kandy Temple & Cultural Show</li>
                 <li>Day 5: Departure</li>
             </ul>
-           
+            
             <a href="https://wa.link/7gqzpj" class="cta-button">Book Now</a>
         </div>
 
@@ -445,7 +113,7 @@ body{
                 <li>Day 5-6: Bentota Beach Relaxation</li>
                 <li>Day 7: Departure</li>
             </ul>
-     
+           
             <a href="https://wa.link/7gqzpj" class="cta-button">Book Now</a>
         </div>
 
@@ -458,7 +126,7 @@ body{
                 <li>Day 5: Scenic Train Journey</li>
                 <li>Day 6: Departure</li>
             </ul>
-            
+        
             <a href="https://wa.link/7gqzpj" class="cta-button">Book Now</a>
         </div>
     </section>
@@ -509,6 +177,7 @@ body{
             </div>
             <div>
                 <h3>Contact Info</h3>
+                <p>Email:</p>
                 <p>Phone: +94 77 239 1260</p>
             </div>
             <div>
@@ -518,77 +187,6 @@ body{
             </div>
         </div>
     </footer>
-
-    <script>
-        function showSidebar(){
-            const sidebar =document.querySelector('.sidebar')
-            sidebar.style.display = 'flex' 
-        }
-        function hideSidebar(){
-            const sidebar =document.querySelector('.sidebar')
-            sidebar.style.display = 'none' 
-        }
-        
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-
-        document.getElementById('bookingForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your inquiry! We will contact you soon.');
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        document.getElementById('bookingForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(this);
-
-    const response = await fetch('process-form.php', {
-        method: 'POST',
-        body: formData,
-    });
-
-    const result = await response.json();
-
-    if (result.status === "success") {
-        alert(result.message);
-        this.reset(); // Reset the form
-    } else {
-        alert(result.message);
-    }
-});
-document.getElementById('reviewForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const review = document.getElementById('review').value;
-
-    // Create a new review element
-    const reviewList = document.getElementById('review-list');
-    const newReview = document.createElement('div');
-    newReview.classList.add('review-item');
-    newReview.innerHTML = `
-        <h4>${name}</h4>
-        <p>${review}</p>
-    `;
-
-    // Append the new review
-    reviewList.appendChild(newReview);
-
-    // Reset the form
-    this.reset();
-});
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
